@@ -12,9 +12,9 @@ int sumOddEven(int n){
     if(n == 0)
         return 0;
     if(n % 2 == 0)
-        return sumOddEven(n - 1) + n;
+        return n + sumOddEven(n - 1);
     else 
-        return sumOddEven(n - 1) - n;
+        return -n + sumOddEven(n - 1);
 }
 
 int main() {
