@@ -2,22 +2,40 @@
 // Gợi ý : Để điều kiện dừng là khi N < 16 sẽ dễ xử lý trường hợp khi N = 0 hơn
 
 #include <stdio.h>
-
-void convert2(long long n){
-    if(n < 16) {
-        if(n < 10) printf("%lld", n);
-        else printf("%c", 'A' + (n - 10));
-    }else{
-        convert2(n / 16);
+#define ll long long 
+void dq(ll n) {
+    if (n < 16) {
+        if (n <= 9) 
+            printf("%d", n);
+        else 
+            printf("%c", n + 55);
+    } 
+	// •	Bảng mã ASCII:
+	// •	'A' = 65
+	// •	10 + 55 = 65 → in 'A'
+	// •	11 + 55 = 66 → in 'B'
+	// •	…
+	// •	15 + 55 = 70 → in 'F'
+    else {
+        dq(n / 16);
         int r = n % 16;
-        if(r < 10) printf("%d", r);
-        else printf("%c", 'A' + (r - 10));
+        if (r <= 9) 
+            printf("%d", r);
+        else 
+            printf("%c", r + 55);
     }
 }
 
 int main() {
-    long long n;
+    ll n;
     scanf("%lld", &n);
-    convert2(n);
+    dq(n);
     return 0;
 }
+
+    // •	10 → A
+	// •	11 → B
+	// •	12 → C
+	// •	13 → D
+	// •	14 → E
+	// •	15 → F

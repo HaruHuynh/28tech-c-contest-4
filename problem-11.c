@@ -3,10 +3,10 @@
 
 void convert(long long n) {
     if(n < 2) 
-        printf("%lld", n % 2);
+        printf("%lld", n % 2); // in ra phần dư 
     else {
-        convert(n / 2);
-        printf("%lld", n % 2);
+        convert(n / 2); // gọi hàm đệ quy để đưa ra phần nguyên của các số chia cho 2 
+        printf("%lld", n % 2); // in ra phần dư (tức phần nhị phân) sau khi n < 2
     }
 }
 
