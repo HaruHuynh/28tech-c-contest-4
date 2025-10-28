@@ -3,20 +3,29 @@
 #define ll long long
 
 ll checkEven(ll n){
-    if(n == 0) return 1;
-    int d = n % 10;
-    if(d % 2 == 0)
-        return checkEven(n / 10);
-    else
-        return 0;
+    if(n < 10){
+        if(n % 2 == 0) return 1;
+        else return 0;
+    }else{
+        if(n % 10 % 2 == 1)
+            return 0;
+        else 
+            return checkEven(n / 10);
+    }
+    // if(n == 0) return 1;
+    // int d = n % 10;
+    // if(d % 2 == 0)
+    //     return checkEven(n / 10);
+    // else
+    //     return 0;
 }
 
 int main() {
     ll n;
     scanf("%lld", &n);
     if(checkEven(n))
-        printf("YES");
+        printf("YES\n");
     else
-        printf("NO");
+        printf("NO\n");
     return 0;
 }

@@ -4,16 +4,16 @@
 
 void leftRight(ll n){
     if(n < 10){
-        printf("%lld", n);
+        printf("%lld ", n);
         return;
     }
     leftRight(n / 10);
-    printf(" %lld", n % 10);
+    printf("%lld ", n % 10);
 }
 
 void rightLeft(ll n){
     if(n < 10){
-        printf("%lld", n);
+        printf("%lld ", n);
         return;
     }
     printf("%lld ", n % 10);

@@ -2,6 +2,7 @@
 // Gợi ý : Các bạn viết 2 hàm tìm chữ số nhỏ nhất và lớn nhất.
 
 #include <stdio.h>
+#include <math.h>
 #define ll long long 
 
 int maxDigit(ll n){
@@ -9,6 +10,7 @@ int maxDigit(ll n){
     int d = n % 10;
     int m = maxDigit(n / 10);
     return d > m ? d : m;
+    // return (int)fmax(n % 10, minDigit(n / 10));
 }
 
 int minDigit(ll n){
@@ -16,6 +18,7 @@ int minDigit(ll n){
     int d = n % 10;
     int m = minDigit(n / 10);
     return d < m ? d : m;
+    // return (int)fmin(n % 10, minDigit(n / 10));
 }
 
 int main() {

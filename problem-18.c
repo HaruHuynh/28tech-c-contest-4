@@ -4,23 +4,45 @@
 #define ll long long
 
 ll sumEven(ll n){
-    if (n == 0) return 0;
+    if(n < 10) {
+        if (n % 2 == 0)
+            return n;
+        else
+            return 0;
+    }else{
+        if(n % 10 % 2 == 0)
+            return n % 10 + sumEven(n / 10);
+        else 
+            return sumEven(n / 10);
+    }
+    // if (n == 0) return 0;
 
-    int d = n % 10;
-    if(d % 2 == 0)
-        return d + sumEven(n / 10);
-    else 
-        return sumEven(n / 10);
+    // int d = n % 10;
+    // if(d % 2 == 0)
+    //     return d + sumEven(n / 10);
+    // else 
+    //     return sumEven(n / 10);
 }
 
 ll sumOdd(ll n){
-    if(n == 0) return 0;
+    if(n < 10) {
+        if (n % 2 == 0)
+            return 0;
+        else
+            return n;
+    }else{
+        if(n % 10 % 2 == 1)
+            return n % 10 + sumOdd(n / 10);
+        else 
+            return sumOdd(n / 10);
+    }
+    // if(n == 0) return 0;
 
-    int d = n % 10;
-    if(d % 2 != 0)
-        return d + sumOdd(n / 10);
-    else
-        return sumOdd(n / 10);
+    // int d = n % 10;
+    // if(d % 2 != 0)
+    //     return d + sumOdd(n / 10);
+    // else
+    //     return sumOdd(n / 10);
 }
 
 int main() {
